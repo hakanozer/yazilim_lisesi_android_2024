@@ -16,4 +16,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="93dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:onClick="gotoProfile"
+        android:text="Profile"
+        app:layout_constraintEnd_toEndOf="@+id/btnGotoProfile"
+        app:layout_constraintStart_toStartOf="@+id/btnGotoProfile"
+        app:layout_constraintTop_toBottomOf="@+id/btnGotoProfile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

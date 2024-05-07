@@ -1,6 +1,10 @@
 package com.works.days_2;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -20,7 +24,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnGotoProfile = findViewById(R.id.btnGotoProfile);
-        btnGotoProfile.setOnClickListener();
-
+        btnGotoProfile.setOnClickListener(profileClick);
     }
+
+    View.OnClickListener profileClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.d("onClick", "Profile onClick: ");
+        }
+    };
+
+    public void gotoProfile(View view) {
+        view.setBackgroundColor(Color.RED);
+        Log.d("gotoProfile", "gotoProfile: click ");
+
+        Intent i = new Intent(this,  ProfileActivity.class);
+        startActivity(i);
+    }
+    
+
 }
