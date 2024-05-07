@@ -13,6 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.works.days_2.models.Customer;
+import com.works.days_2.utils.Const;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnGotoProfile;
@@ -38,9 +41,17 @@ public class MainActivity extends AppCompatActivity {
         view.setBackgroundColor(Color.RED);
         Log.d("gotoProfile", "gotoProfile: click ");
 
+        Customer c = new Customer(50, "Erkan", "Bilsin", "Istanbul Address");
+        ProfileActivity.customer = c;
+        //ProfileActivity.customer = new Customer(50, "Erkan", "Bilsin", "Istanbul Address");
+
         Intent i = new Intent(this,  ProfileActivity.class);
+        i.putExtra(Const.NAME, "Ali");
+        i.putExtra(Const.SURNAME, "Bilmem");
         startActivity(i);
+        // finish(); // bu ekranı öldür.
+        // System.exit(0);
     }
-    
+
 
 }
