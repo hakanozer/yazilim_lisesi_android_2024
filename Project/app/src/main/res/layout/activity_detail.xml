@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/d_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/d_img"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/d_title"
+        app:layout_constraintStart_toStartOf="@+id/d_title"
+        app:layout_constraintTop_toBottomOf="@+id/d_title"
+        app:srcCompat="@drawable/ic_basket" />
+
+    <TextView
+        android:id="@+id/d_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="200₺"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/d_img"
+        app:layout_constraintTop_toBottomOf="@+id/d_img" />
+
+    <TextView
+        android:id="@+id/d_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Detail"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/d_price"
+        app:layout_constraintStart_toStartOf="@+id/d_img"
+        app:layout_constraintTop_toBottomOf="@+id/d_price" />
+
+    <ImageButton
+        android:id="@+id/btnLike"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#00FFFFFF"
+        android:tint="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/d_detail"
+        app:layout_constraintStart_toStartOf="@+id/d_detail"
+        app:layout_constraintTop_toBottomOf="@+id/d_detail"
+        app:srcCompat="@drawable/ic_heart" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,6 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
         public void run() {
             Intent i = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(i);
+            finish();
         }
     };
 
