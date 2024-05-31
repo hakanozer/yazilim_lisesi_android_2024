@@ -38,6 +38,13 @@ public class LoginActivity extends AppCompatActivity {
         shared = getSharedPreferences("customer", MODE_PRIVATE);
         editor = shared.edit();
 
+        String token = shared.getString("token","");
+        if(!token.equals("")) {
+            Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
+            startActivity(i);
+            finish();
+        }
+
         txtUserName = findViewById(R.id.txtUserName);
         txtPassword = findViewById(R.id.txtPassword);
         btnLogin = findViewById(R.id.btnLogin);
