@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DB extends SQLiteOpenHelper {
 
     public DB(@Nullable Context context) {
@@ -54,5 +57,17 @@ public class DB extends SQLiteOpenHelper {
         db.close();
         return status;
     }
+
+
+    public List<Long> allLikes() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Long> list = new ArrayList<>();
+        Cursor cursor = db.rawQuery("select * from likes", null);
+        while (cursor.moveToNext()) {
+            long pid = cursor.getLong(1);
+            list.add(pid);
+        }
+        return list;
+     }
 
 }

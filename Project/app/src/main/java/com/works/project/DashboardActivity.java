@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +28,7 @@ public class DashboardActivity extends AppCompatActivity {
     DummService dummService;
     ListView productListView;
     List<Product> products;
+    Button btnLikes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class DashboardActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
 
+        btnLikes = findViewById(R.id.btnLikes);
         productListView = findViewById(R.id.productListView);
         dummService = Api.getClient().create(DummService.class);
         dummService.allProduct().enqueue(new Callback<Products>() {
@@ -59,6 +62,14 @@ public class DashboardActivity extends AppCompatActivity {
                 Product pro = products.get(position);
                 DetailActivity.pro = pro;
                 Intent i = new Intent(DashboardActivity.this, DetailActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnLikes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, Likes.class);
                 startActivity(i);
             }
         });
